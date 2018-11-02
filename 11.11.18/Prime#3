@@ -1,0 +1,31 @@
+/*Напишите программу, вычисляющую биномиальный коэффициент из n по к. В
+программе нельзя использовать числа, превышающие итоговое значение.
+*/
+#include <iostream>      
+ 
+using namespace std;
+ 
+int Factorial(int number)
+        {
+            if (number <= 1)
+                return 1;
+            else
+                return number * Factorial(number - 1);
+        }
+long Combine(int k, int n)
+{
+return Factorial(n)/Factorial(k)/Factorial(n-k);
+}
+int main()
+{
+    int n;
+    int k;
+    cout<<"please,enter n=";
+    cin>>n;
+    cout<<"please,enter k=";
+    cin>>k;
+    long s = Combine(k,n);
+    cout << s << endl;
+    system("pause");
+    return 0;
+}
